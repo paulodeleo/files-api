@@ -26,4 +26,21 @@ class FileUpload < ApplicationRecord
     .paginate(page)
     .order(:name)
   end
+
+  def self.paginate(page)
+    per_page = 10
+    offset = (page * per_page) - per_page
+    offset(offset)
+    .limit(per_page)
+  end
+
+  def self.related_tags(records, allowed_tags)
+    flattened_tags = records.map{|record| record.tags.map(&:name)}.flatten
+    unique_tags = flattened_tags.uniq
+    related_tags = unique_tags - allowed_tags
+    related_tags
+      .map{|tag| [['tag', tag], ['file_count', flattened_tags.count(tag)]]}
+      .map(&:to_h)
+  end
+
 end
