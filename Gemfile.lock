@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/dlanileonardo/ruby-debug-ide.git
+  revision: 57f4243060d8b4e5b892be55f2a429138d579e4b
+  specs:
+    ruby-debug-ide (0.7.0.beta6)
+      rake (>= 0.8.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -73,6 +80,9 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    debase (0.2.2)
+      debase-ruby_core_source (>= 0.10.2)
+    debase-ruby_core_source (0.10.3)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
@@ -197,11 +207,13 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  debase
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.1)
+  ruby-debug-ide!
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
